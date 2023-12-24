@@ -1,4 +1,4 @@
-# Hayday best goods calulator
+# Hayday best goods calculator
 This program will tell you the top goods to produce for each production building at your level to maximize the revenue when sold in the roadside shop. It can be used to calculate the goods to produce that will maximize xp when collected. 
 
 ## How To Use
