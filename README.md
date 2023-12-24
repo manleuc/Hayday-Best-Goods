@@ -1,17 +1,22 @@
 # Hayday best goods calculator
 This program will tell you the top goods to produce for each production building at your level to maximize the revenue when sold in the roadside shop. It can be used to calculate the goods to produce that will maximize xp when collected. 
+## Getting Started
+1. Download (or clone) the repository.
+2. Ensure that Python version 3.7+ is downloaded. Here is the [link](https://www.python.org/downloads/).
+3. Open the file location of the downloaded repository, right click **Hayday-Best-Goods** folder, and select **Open in Terminal**.
+4. After your terminal opens run the command ```python hayday_best.py [level]```
 
 ## How To Use
-The script accepts one input which is your current hayday level. It will defaultly calculate the top 3 goods to produce based on their max revenue value in the RSS for each production building. 
+The python script, hayday_best.py, accepts one input which is your current hayday level. It will defaultly calculate the top 3 goods to produce based on their max revenue value in the RSS for each production building. 
 
 Other flags are included for various other use cases such as best goods to produce to maximize XP and factoring the time it takes to produce a good. 
 
 Here are some potential use cases: 
-- Prints the 3 best goods to produce for level 37 for each production building that maximizes revnue in RSS:
+- Prints the 3 best goods to produce for level 37 for each production building that maximizes revenue in RSS:
     
     ```python hayday_best.py 37```
 
-- If you want to find the best goods to maxmize XP, use the ```-xp``` or ```--xp``` flag
+- If you want to find the best goods to maximize XP, use the ```-xp``` or ```--xp``` flag
 
     The following will find the best goods the produce to maximize xp for level 78: 
     
@@ -31,10 +36,12 @@ Here are some potential use cases:
 ### Help command
 To get a list of all flags and their use cases, run the following help command: 
 
-```python hayday_best.py -h``` 
+With python: ```python hayday_best.py -h``` 
 
 
 ### Note: Feed Mill, Dairy, and Sugar Mill Production 
 Feed Mill, Dairy and Sugar goods are ignored by default since these goods are often used to produce more expensive goods. If you wish to print the Dairy and Sugar Mill production info use the ```-ds``` flag: 
 
-```python hayday_best.py [level] -ds```
+With python: ```python hayday_best.py [level] -ds```
+
+
