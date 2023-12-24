@@ -6,3 +6,6 @@ __pycache__/
 dist/ 
 build/
 hayday_best.spec 
+
+# generated txt from txt parse argument
+bestgoods.txt

@@ -36,12 +36,15 @@ Here are some potential use cases:
 ### Help command
 To get a list of all flags and their use cases, run the following help command: 
 
-With python: ```python hayday_best.py -h``` 
+```python hayday_best.py -h``` 
 
 
 ### Note: Feed Mill, Dairy, and Sugar Mill Production 
 Feed Mill, Dairy and Sugar goods are ignored by default since these goods are often used to produce more expensive goods. If you wish to print the Dairy and Sugar Mill production info use the ```-ds``` flag: 
 
-With python: ```python hayday_best.py [level] -ds```
+```python hayday_best.py [level] -ds```
 
+### Text file
+You can also generate the list as a text file for ease of access. Use the `-txt` or `--text` flag. This will generate a .txt file called bestgoods.txt, where you can view the complete list of best goods to produce for your specified level.
 
+```python hayday_best.py [level] -txt```

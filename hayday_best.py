@@ -11,8 +11,10 @@ def main():
     parser.add_argument('-n', "--num_goods", type=int, default=3,
                         help='number of goods to print for each production building.')
     parser.add_argument('-xp', '--xp', action="store_true", default=False, help="calculates based on xp instead of price.")
-    parser.add_argument('-t', "--time", action="store_true", default=False, help="factors in production time in calculations. this should be used if you are a more active player that checks your farm often")
-    parser.add_argument('-ds', "--dairy_sugar", action="store_true", default=False, help="print out dairy and sugar mill production info (defaultly ignores dairy and sugar)")
+    parser.add_argument('-t', "--time", action="store_true", default=False, help="factors in production time in calculations. this should be used if you are a more active player that checks your farm often.")
+    parser.add_argument('-ds', "--dairy_sugar", action="store_true", default=False, help="print out dairy and sugar mill production info (defaultly ignores dairy and sugar).")
+    parser.add_argument('-txt', "--text", action="store_true", default=False, help="stores the list of best goods into a txt file.")
+
 
     args = parser.parse_args()
     if args.level > 0: 
@@ -23,7 +25,8 @@ def main():
     
     use_time = args.time
     xp = args.xp
-    
+    txt = args.text
+    goodstext = ""
     num_items = args.num_goods
 
     html_file =  "goods_list.csv"
@@ -57,6 +60,8 @@ def main():
         prod_build_dict[good[-1]].put((priority, good))
         
     for building in prod_build_dict:
+        if txt:
+            goodstext += building + "\n"
         print(building)
         for _ in range(num_items):
             if not prod_build_dict[building].empty(): 
@@ -75,14 +80,19 @@ def main():
                     value = int(good[2])
                     unit = "coins" + unit
 
-                value = round(value / time) 
-                
+                value = round(value / time)
+                if txt:
+                    temp = " {value} {unit} \t {name}\n".format(build = building, value = value, unit = unit, name = good[0])
+                    goodstext += temp
                 print(" ", value, unit, "\t", good[0])
             else: 
                 continue
         print()
+    if txt:
+        with open('bestgoods.txt', 'w') as file: 
+            file.write(goodstext)
+    
     return 0
-
 
 if __name__ == '__main__': 
     main()
