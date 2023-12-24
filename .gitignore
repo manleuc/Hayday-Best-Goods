@@ -1,3 +1,8 @@
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
+
+# build artifacts 
+build/ 
+dist/goods_list.csv
+hayday_best.spec 
