@@ -79,7 +79,7 @@ def read_html_to_csv():
 
     fields = ['name', 'level', 'price', 'time', 'xp', 'source']
 
-    with open('goods_list.csv', 'w') as f: 
+    with open('goods_list.csv', 'w', encoding="utf-8", newline='') as f: 
         write = csv.writer(f)
         write.writerow(fields)
         write.writerows(goods_list)

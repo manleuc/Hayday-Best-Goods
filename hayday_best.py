@@ -31,7 +31,7 @@ def main():
         read_html_to_csv()
 
     # filters read csv by level
-    with open('goods_list.csv', 'r') as f: 
+    with open('goods_list.csv', 'r', encoding="utf-8") as f: 
         csv_goods_list = list(csv.reader(f))
         goods_list = [entry for entry in csv_goods_list[1:] if int(entry[1]) <= level]
     
